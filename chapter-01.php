@@ -8,8 +8,10 @@ $access_token  = 'HatdNCqxGq+BiYUUAxXYbz8Bjlx1Mx1O8tHLxim2y2cF2BuWxGxt6fIIfnudfQ
 $bot = new BOT_API($channelSecret, $access_token);
 	
 if (!empty($bot->isEvents)) {
+	
+    $text = "HI ".$bot->message["type"];
 		
-    $bot->replyMessageNew($bot->replyToken, var_dump($bot->message["type"]));//json_encode($bot->message));
+    $bot->replyMessageNew($bot->replyToken, $text);
 
     if ($bot->isSuccess()) {
         echo 'Succeeded!';
