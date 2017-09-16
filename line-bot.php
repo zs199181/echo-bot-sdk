@@ -60,18 +60,18 @@ class BOT_API extends LINEBot {
                 $this->timestamp  = $event['timestamp'];
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
-//                     $this->isText = true;
+                    $this->isText = true;
                     $this->text   = $event['message']['text'];
                 }
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'image') {
-//                     $this->isImage = true;
-			$this->text   = $event['message']['image'];
+                    $this->isImage = true;
+			$this->isImage   = 'image';
                 }
 				
                 if ($event['type'] == 'message' && $event['message']['type'] == 'sticker') {
-//                     $this->isSticker = true;
-			$this->text   = $event['message']['sticker'];
+                    $this->isSticker = true;
+			$this->isSticker   = 'sticker';
                 }
 				
             }
@@ -91,7 +91,7 @@ class BOT_API extends LINEBot {
         ]);
     }
 	
-    public function replyMessageNew ($replyToken = null, $message = null) {
+    public function replyMessageNew ($replyToken = null) {
         $messageBuilder = new TextMessageBuilder($message);
         $this->response = $this->httpClient->post($this->endpointBase . '/v2/bot/message/reply', [
             'replyToken' => $replyToken,
