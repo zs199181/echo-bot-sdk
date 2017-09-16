@@ -1,6 +1,6 @@
 <?php
 
-include ('line-bot-api/php/line-bot.php');
+include ('line-bot.php');
 
 $channelSecret = '	
 4c6b31ffceb1b59b3c93ac27345062f8';
