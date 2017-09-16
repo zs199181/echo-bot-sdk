@@ -9,7 +9,7 @@ $bot = new BOT_API($channelSecret, $access_token);
 	
 if (!empty($bot->isEvents)) {
 	
-    $text = "HI ".$bot->message["type"];
+    $text = "HI ";
 		
     $bot->replyMessageNew($bot->replyToken, $text);
 
